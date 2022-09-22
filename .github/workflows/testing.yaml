@@ -1,0 +1,21 @@
+name: testing
+
+on:
+pull_request:
+branches:
+-master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/setup-node@v1
+      with:
+        node-version: "16.16"
+    - name: Installing Dependecias
+      run: npm i
+
+    - name: testing our app
+      run: npm test
+
